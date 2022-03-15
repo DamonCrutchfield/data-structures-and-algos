@@ -1,10 +1,8 @@
 function countdown(n) {
-    let countdownString = '';
     if (n <= 0) {
-        return countdownString + 'Liftoff!';
+        return 'Liftoff!';
     } else {
-        countdownString += `${n}, `;
+        return `${n}, ` + countdown(n - 1);
     }
-    return countdownString += countdown(n - 1)
 }
 module.exports = countdown
