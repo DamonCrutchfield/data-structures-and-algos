@@ -3,9 +3,9 @@ class BinarySearchTree {
    * 
    *  5
    * / \ 
-   *2   3
+   *2   6
    / \   \
-  4   6   7
+  4   3   7
    *     
    *      
    */
@@ -31,18 +31,21 @@ class BinarySearchTree {
     }
   }
   contains(value) {
-    if (this.value === value) {
+    console.log(value, 'VALUE!!');
+    if (value === this.value) {
       return true;
+    } else if (value < this.value) {
+      if (this.left) {
+        this.left.contains(value);
+      } else {
+        return false;
+      }
     } else {
       if (this.right) {
         this.right.contains(value);
+      } else {
+        return false;
       }
-      if (this.left) {
-        this.left.contains(value);
-      }
-    }
-    if (this.right === null && this.left === null) {
-      return false;
     }
   }
 }
