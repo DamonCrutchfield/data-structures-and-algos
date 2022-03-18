@@ -1,5 +1,4 @@
 function pairSum(arr, sum){
-	// Complete the function!
 	/**
 	 * Looks for a pair of numbers in a list that equal a target sum, 
 	 * and returns true if a pair is found or false if a pair is not found.
@@ -13,6 +12,9 @@ function pairSum(arr, sum){
 	 * 	b.) return true
 	 * 2.) if loop exits that means no pair was found, so return false
 	 */
+
+	//Solution 1
+
 	for (let i = 0; i < arr.length; i++) {
 		let number = arr[i];
 		if (arr.indexOf(sum - number) !== i && arr.indexOf(sum - number) !== -1) {
@@ -20,6 +22,8 @@ function pairSum(arr, sum){
 		}
 	}
 	return false;
+
+
 }
 
 module.exports = pairSum
